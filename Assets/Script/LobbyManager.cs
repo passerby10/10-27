@@ -47,11 +47,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         connectionInfoText.text = "마스터 서버에 접속중...";
     }
 
-    public void OnLogin()
-    {
-        
-
-    }
     private void ChangePanel(ActivePanel panel)
     {
         foreach (GameObject _panel in panels)
@@ -114,6 +109,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     public void OnCreateRoomClick()
     {
+        if (!PhotonNetwork.IsConnected)
+            return;
+
         PhotonNetwork.CreateRoom(txtRoomName.text
                                 , new RoomOptions { MaxPlayers = this.maxPlayer }, TypedLobby.Default);
 

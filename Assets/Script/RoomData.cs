@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoomData : MonoBehaviour {
+public class RoomData : MonoBehaviourPunCallbacks
+{
 
     public string roomName = "";
     public int playerCount = 0;

@@ -23,5 +23,6 @@ public class RoomData : MonoBehaviour {
                                         , roomName
                                         , playerCount.ToString("00")
                                         , maxPlayer);
+        Debug.Log(roomDataTxt.text);
     }
 }
